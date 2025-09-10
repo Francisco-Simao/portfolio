@@ -1,0 +1,249 @@
+    /* RESET E ESTILOS GERAIS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: #0f0f0f;
+        color: #fff;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* HEADER */
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(15, 15, 15, 0.9);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        z-index: 1000;
+        transition: 0.3s;
+        
+    }
+
+    header:hover {
+        background: rgba(15, 15, 15, 1);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        color: #00ffcc;
+    }
+
+    nav {
+        display:flex ;
+        flex-flow: row wrap;
+    }
+
+    nav a {
+        margin: 10px;
+        font-weight: 600;
+        color: #fff;
+        position: relative;
+    }
+
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: #00ffcc;
+        left: 0;
+        bottom: -5px;
+        transition: 0.3s;
+    }
+
+    nav a:hover::after {
+        width: 100%;
+    }
+
+    /* SEÇÕES */
+    section {
+        min-height: 100vh;
+        padding: 100px 50px 50px 50px;
+    }
+
+    /* ANIMAÇÕES */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* SOBRE MIM */
+    #sobre {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    #sobre img {
+        margin-top: 20px;
+        width: 300px; 
+        height: 300px; 
+        border-radius: 50%; 
+        padding: 5px; 
+        border: 5px solid #00e6b8; 
+        background-clip: padding-box, border-box;
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+        transition: transform 0.3s;
+    }
+
+    #sobre img:hover {
+        transform: scale(1.05);
+    }
+
+    #sobre img:hover {
+        transform: scale(1.05);
+    }
+
+    #sobre div {
+        max-width: 600px;
+    }
+
+    #sobre h2 {
+        color: #00ffcc;
+        margin-bottom: 20px;
+    }
+
+    #sobre p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+        color: #ccc;
+    }
+
+    /* PROJETOS */
+    #projetos {
+        background: #111;
+    }
+
+    .projetos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    #todo-list img{
+        width: 100%;
+        border-radius: 15px;
+        margin-bottom: 5px;
+    }
+
+    .projeto {
+        background: #1c1c1c;
+        padding: 20px;
+        border-radius: 15px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+    .projeto:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,255,204,0.3);
+    }
+
+    .projeto h3 {
+        margin-bottom: 10px;
+        color: #00ffcc;
+    }
+
+    .projeto p {
+        color: #ccc;
+    }
+
+    /* SKILLS */
+    #skills {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .skill-group {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .skill {
+        background: #1c1c1c;
+        padding: 15px 25px;
+        border-radius: 10px;
+        color: #00ffcc;
+        font-weight: 600;
+        transition: transform 0.3s;
+    }
+
+    .skill:hover {
+        transform: scale(1.1);
+    }
+
+    /* CONTATO */
+    #contato form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 500px;
+    }
+
+    #contato input, #contato textarea {
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    #contato button {
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        background: #00ffcc;
+        color: #0f0f0f;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #contato button:hover {
+        background: #00e6b8;
+    }
+
+    /* RODAPÉ */
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #666;
+        background: #111;
+    }
+
+    /* RESPONSIVO */
+    @media(max-width: 900px) {
+        #sobre {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px 30px;
+        }
+    }
