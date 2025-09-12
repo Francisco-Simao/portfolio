@@ -136,6 +136,17 @@
         background: #111;
     }
 
+    #projetos a {
+        display: block;
+        color: #00ffcc;
+        margin-top: 10px;
+        transition: color .3s ease;
+    }
+
+    #projetos a:hover {
+        color: #01c79f;
+    }
+
     .projetos-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
