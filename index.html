@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Francisco</title>
     <link rel="stylesheet" href="scr/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css" integrity="sha512-k+xZuzf4IaGQK9sSDjaNyrfwgxBfoF++7u6Q0ZVUs2rDczx9doNZkYXyyQbnJQcMR4o+IjvAcIj69hHxiOZEig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
     </script>
 </script>
 </head>
@@ -43,7 +46,7 @@
                 <p>Este projeto é uma aplicação simples e interativa para gerenciamento de tarefas do dia a dia. Com um
                     design moderno, cores suaves e responsivo para qualquer dispositivo, a lista permite adicionar,
                     marcar como concluído e remover tarefas de forma prática.</p>
-                <a href="">CLIQUE AQUI PARA ACESSAR O SITE</a>
+                <a href="https://minhalist.netlify.app/" target="_blank">CLIQUE AQUI PARA ACESSAR O SITE</a>
             </div>
             <div class="projeto">
                 <img src="img/calculadora.png" alt="IMAGEM DO MEU SITE DE CALCULADORA">
@@ -52,8 +55,7 @@
                 <a href="https://meu-calculo.netlify.app/" target="_blank">CLIQUE AQUI PARA ACESSAR O SITE</a>
             </div>
             <div class="projeto">
-                <h3>Projeto 3</h3>
-                <p>Descrição breve do projeto, tecnologias usadas e resultado.</p>
+                <h3>ESTOU TRABALHANDO EM MAIS PROJETOS...</h3>
             </div>
         </div>
     </section>
@@ -75,20 +77,56 @@
         </div>
     </section>
 
-    <section id="contato" class="fade-in">
-        <h2>Contato</h2>
-        <form id="contact-form">
-        <input type="text" name="from_name" placeholder="Seu nome" required>
-        <input type="email" name="reply_to" placeholder="Seu email" required>
-        <textarea name="message" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-        </form>
+
+    <section id="cont">
+        <section id="cont-geral">         
+            <div id="header-cont">
+                <i class="fa-solid fa-circle-user fa-xl"></i>
+                <h2>Contato</h2>
+                </div>
+            </div>
+
+            <div id="cont-links">
+                <a href="https://www.instagram.com/__cisso/" target="_blank">
+                <i class="fa-brands fa-instagram fa-xl" ></i>
+                <p>@__cisso</p>
+                </a>
+                <a href="https://www.linkedin.com/in/francisco-sim%C3%A3o-ab7749383/" target="_blank">
+                <i class="fa-brands fa-github fa-xl" ></i>
+                <p>Francisco Simão</p>
+                </a>
+                <a href="https://github.com/Francisco-Simao" target="_blank">
+                <i class="fa-brands fa-linkedin fa-xl" ></i>
+                <p>Francisco-Simão</p>
+            </div>
+        </a>
+        </section>
+        <section id="contato" class="fade-in">
+            <h2>Contato</h2>
+            <form id="contact-form" method="post">
+                <div class="input-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="input-group">
+                    <label for="subject">Assunto:</label>
+                    <input type="text" name="subject" id="subject">
+                </div>
+                <div class="input-group">
+                    <label for="message">Mensagem :</label>
+                    <textarea name="message" id="message" rows="5"></textarea>
+                </div>
+
+                <button type="submit" id="submit-button">ENVIAR MENSAGEM</button>
+            </form>
+        </section>
     </section>
 
-    <footer>
-        &copy; 2025 Francisco Simao. Todos os direitos reservados.
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.js" integrity="sha512-ZHzbWDQKpcZxIT9l5KhcnwQTidZFzwK/c7gpUUsFvGjEsxPusdUCyFxjjpc7e/Wj7vLhfMujNx7COwOmzbn+2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scr/script.js"></script>
 
 </body>

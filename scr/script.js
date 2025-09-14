@@ -1,26 +1,52 @@
-// Inicializa o EmailJS
-(function(){
-   emailjs.init("vXTUHmbQ32WDwtNuE"); // Apenas a chave pública
-})();
+emailjs.init("vXTUHmbQ32WDwtNuE");
 
-// Formulário de contato
-const form = document.getElementById('contato-form');
+document.getElementById('contact-form').addEventListener('submit', function(event){
+    event.preventDefault();
 
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    
-    emailjs.sendForm("service_hb8op05", "template_1870xu8", this)
-    .then(() => {
-        alert('Mensagem enviada com sucesso!');
-        form.reset();
-    }, (err) => {
-        alert('Erro ao enviar a mensagem: ' + JSON.stringify(err));
-    });
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+    }
+
+    const serviceID = "service_qdz22sn";
+    const templateID = "template_1l6ozsr";
+    const submitButton = document.getElementById('submit-button');
+    submitButton.textContent = 'Enviando...';
+    submitButton.disabled = true;
+
+    emailjs.send(serviceID, templateID, formData)
+        .then(() => {
+            Toastify({
+                text: "Email enviado com sucesso",
+                duration: 3000,
+                style: {
+                    color: "#01c79f",
+                    background: "rgba(0, 255, 204, 0.5)"
+                },
+            }).showToast();
+
+            document.getElementById('contact-form').reset();
+        })
+        .catch((error) => {
+            Toastify({
+                text: "Erro ao enviar a mensagem",
+                duration: 3000,
+                style: {
+                    color: "#fff",
+                    background: "rgba(255, 0, 0, 0.6)"
+                },
+            }).showToast();
+            console.error("Erro:", error);
+        })
+        .finally(() => {
+            submitButton.textContent = 'Enviar mensagem';
+            submitButton.disabled = false;
+        });
 });
 
 
-
-// Animação fade-in ao rolar a página
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOptions = { threshold: 0.3 };
@@ -34,4 +60,3 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 }, appearOptions);
 
 faders.forEach(fader => { appearOnScroll.observe(fader); });
-

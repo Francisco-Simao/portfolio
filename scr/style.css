@@ -10,6 +10,7 @@
     body {
         background: #0f0f0f;
         color: #fff;
+        overflow-x: hidden;
     }
 
     a {
@@ -19,17 +20,11 @@
 
     /* HEADER */
     header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(15, 15, 15, 0.9);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 50px;
-        z-index: 1000;
         transition: 0.3s;
-        
+        display:flex ;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
     }
 
     header:hover {
@@ -39,11 +34,7 @@
     header h1 {
         font-size: 1.8rem;
         color: #00ffcc;
-    }
-
-    nav {
-        display:flex ;
-        flex-flow: row wrap;
+        margin: 10px;
     }
 
     nav a {
@@ -70,8 +61,9 @@
 
     /* SEÇÕES */
     section {
-        min-height: 100vh;
+        min-height: 40vh;
         padding: 100px 50px 50px 50px;
+        width: 100%;
     }
 
     /* ANIMAÇÕES */
@@ -91,13 +83,14 @@
     /* SOBRE MIM */
     #sobre {
         display: flex;
+        width: 100%;
         align-items: center;
+        flex-flow: row wrap;
         justify-content: center;
         gap: 50px;
     }
 
     #sobre img {
-        margin-top: 20px;
         width: 300px; 
         height: 300px; 
         border-radius: 50%; 
@@ -170,7 +163,7 @@
 
     .projeto:hover {
         transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0,255,204,0.3);
+        box-shadow: 0 10px 20px (0,255,204,0.3);
     }
 
     .projeto h3 {
@@ -209,15 +202,87 @@
     }
 
     /* CONTATO */
-    #contato form {
+    #cont {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+
+    #cont-geral {
+        display: flex;
+        height: 150px;
+        flex-direction: column;
+        border-radius: 10px ;     
+        max-width: 500px;     
+    }
+
+    #header-cont {
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+        color: #2c3e50;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    #header-cont h2 {
+        margin-bottom: 2px;
+    }
+
+    #cont-links {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        background-color:rgba(255, 255, 255, 0.309); 
+        border-radius: 0 0 10px 10px;
+    }
+
+    #cont a {
+        display: flex;
+        align-items: center;
+        color: rgb(231,230,230);
+        padding: 20px;
+        text-decoration: none;
+        transform: color .3s ease;
+    }
+
+    #cont a:hover {
+        color: rgb(183,183,183);
+    }
+
+    #cont i {
+        margin: 3px;
+    }
+
+    #contato {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 80vw;
+    }
+
+    #contato form {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
         gap: 20px;
-        max-width: 500px;
+        width: 100% ;
+        background-color: #6666668a;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .input-group {
+        display: flex;
+        width: 150px;
+        flex-flow: wrap;
+        justify-content: space-around;
     }
 
     #contato input, #contato textarea {
         padding: 15px;
+        width: 90%;
         border-radius: 10px;
         border: none;
         outline: none;
@@ -248,13 +313,34 @@
     }
 
     /* RESPONSIVO */
-    @media(max-width: 900px) {
-        #sobre {
-            flex-direction: column;
-            text-align: center;
+        @media(max-width: 480px) {
+            header {
+                display: flex;
+                flex-flow: row wrap;
+                padding: 20px 30px;
+            }
+    
+            #sobre {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            #sobre div {
+                max-width: 100%;
+                /* ocupa a largura toda */
+            }
+    
+            #sobre img {
+                width: 200px;
+                /* imagem menor para mobile */
+                height: 200px;
+            }
+    
+            #cont-geral {
+                margin-bottom: 70px;
+            }
+    
+            #contato {
+                margin-top: 70px;
+            }
         }
-
-        header {
-            padding: 20px 30px;
-        }
-    }
