@@ -23,7 +23,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 duration: 3000,
                 style: {
                     color: "#01c79f",
-                    background: "rgba(0, 255, 204, 0.5)"
+                    background: "rgba(4, 132, 107, 0.81)"
                 },
             }).showToast();
 
